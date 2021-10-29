@@ -27,6 +27,4 @@ The resulting SKOS taxonomy can be found [here](). Through [SKOS Play](https://s
 
 
 ## Contact Details
-For any queries or remarks on the above, or if you would like to deploy CASPAR for your use case, please feel free to contact us:
-* Panagiotis Mitzias ([Homepage](http://pmitzias.com/) | [e-mail](mailto:pmitzias@catalink.eu?subject=Tate%20SKOS) | [GitHub account](https://github.com/panmitz))
-* Efstratios (Stratos) Kontopoulos ([Homepage](http://www.stratoskontopoulos.com) | [e-mail](mailto:e.kontopoulos@catalink.eu?subject=Tate%20SKOS) | [GitHub account](https://github.com/skontopo))
+For any queries or remarks on the Tate SKOS taxonomy, or if you would like to deploy CASPAR for your use case, please feel free to [contact us](mailto:caspar@catalink.eu?subject=Tate%20SKOS).
