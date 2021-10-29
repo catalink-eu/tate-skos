@@ -1,0 +1,82 @@
+{
+  "templates": [
+    {
+      "prefixes": [
+        {
+          "prefix": "rdf",
+          "namespace": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "prefix": "rdfs",
+          "namespace": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "prefix": "xsd",
+          "namespace": "http://www.w3.org/2001/XMLSchema#"
+        },
+        {
+          "prefix": "owl",
+          "namespace": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "prefix": "skos",
+          "namespace": "http://www.w3.org/2004/02/skos/core#"
+        },
+		{
+          "prefix": "tate",
+          "namespace": "http://caspar.catalink.eu/tate#"
+        }		
+      ],
+      "individuals": [
+        {
+          "path": "[*]",
+          "namespace": "http://caspar.catalink.eu/tate#",
+          "classes": ["skos:Concept"],
+          "properties": [
+			{
+              "predicates": ["skos:prefLabel"],
+              "object": {
+                "path": "[*].name",
+				"language": "en"
+              }
+            },
+			{
+              "predicates": ["skos:hiddenLabel"],
+              "object": {
+                "path": "[*].id"
+              }
+            },
+			{
+              "predicates": ["skos:broader"],
+              "object": {
+                "path": "[*].parent0"
+              }
+            }
+		  ],
+          "update_on": []
+        },
+		{
+          "path": "[*].parent0",
+          "namespace": "http://caspar.catalink.eu/tate#",
+          "classes": ["skos:Concept"],
+          "properties": [
+			{
+              "predicates": ["skos:hiddenLabel"],
+              "object": {
+                "path": "[*].parent0"
+              }
+            }
+		  ],
+          "update_on": [
+			{
+              "predicates": ["skos:hiddenLabel"],
+              "object": {
+                "path": "[*].parent0"
+              }
+            }
+		  ]
+        }
+      ]
+    }
+  ]
+}
