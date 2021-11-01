@@ -3,7 +3,7 @@ This repository features a [SKOS](https://www.w3.org/2004/02/skos/) taxonomy gen
 
 
 ## Scope & Aim
-[Tate UK](https://www.tate.org.uk/) has publicly released its subject hierarchy as a [set of JSON files](https://github.com/tategallery/collection/tree/master/processed/subjects) organized in three levels. For example, in [this artwork](http://www.tate.org.uk/art/artworks/blake-a-figure-bowing-before-a-seated-old-man-with-his-arm-outstretched-in-benediction-a00001) by Robert Blake, the relevant subjects are found in section 'Explore'. An excerpt from the specific subjects is `'religion and belief' > 'universal religious imagery' > 'blessing'`. The following table indicates the total number of subjects per level:
+[Tate UK](https://www.tate.org.uk/) has publicly released its subject hierarchy as a [set of JSON files](https://github.com/tategallery/collection/tree/master/processed/subjects) organized in three levels. For example, in [this artwork](http://www.tate.org.uk/art/artworks/blake-a-figure-bowing-before-a-seated-old-man-with-his-arm-outstretched-in-benediction-a00001) by Robert Blake, the relevant subjects are found in section 'Explore'. An excerpt from the list of subjects for the specific artwork is `'religion and belief' > 'universal religious imagery' > 'blessing'`. The following table indicates the total number of subjects per level:
 
 |  Level  | Count |
 |:-------:|:-----:|
@@ -11,7 +11,7 @@ This repository features a [SKOS](https://www.w3.org/2004/02/skos/) taxonomy gen
 | level-1 |  142  |
 | level-2 |  2251 |
 
-The aim of this work was to assess how easy it is to deploy our [CASPAR framework](https://caspar.catalink.eu/) for converting the set of JSON files into a SKOS taxonomy. Having the subject hierarchy in SKOS format enables its easy publication and use by third parties as [linked data](https://en.wikipedia.org/wiki/Linked_data).
+Having the subject hierarchy in SKOS format enables its easy publication and use by third parties as [linked data](https://en.wikipedia.org/wiki/Linked_data). Therefore, in order to establish semantic interoperability with third parties and help out with Tate's extroversion, our aim in this work was to convert the JSON files to a SKOS taxonomy using our in-house [CASPAR framework](https://caspar.catalink.eu/) for semantic data integration.
 
 
 ## Semantic Data Integration with CASPAR
@@ -20,7 +20,7 @@ CASPAR converts the input files into a semantic [Knowledge Graph](https://en.wik
 Just for reference, the mappings for converting Tate's JSON files into a SKOS taxonomy via CASPAR are found [here](resources/mappings).
 
 
-## SKOS taxonomy
+## SKOS Taxonomy
 The resulting SKOS taxonomy can be found [here](). Through [SKOS Play](https://skos-play.sparna.fr/play/) we also generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) in PDF, containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
 
 ![tate-skos-play.png](resources/figures/tate-skos-play.png)
