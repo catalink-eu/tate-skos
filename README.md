@@ -21,9 +21,57 @@ Just for reference, the mappings for converting Tate's JSON files into a SKOS ta
 
 
 ## SKOS Taxonomy
-The resulting SKOS taxonomy can be found [here](). Through [SKOS Play](https://skos-play.sparna.fr/play/) we also generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) in PDF, containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
+The resulting SKOS taxonomy can be found [here](resources/ontology) and is compliant with the '[Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web](https://arxiv.org/abs/2003.13084)'. Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) in PDF, containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
 
 ![tate-skos-play.png](resources/figures/tate-skos-play.png)
+
+
+## Sample SPARQL Queries
+
+### List all level-0 concepts
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?level_0_concept
+WHERE { 
+	?level_0_concept rdf:type skos:Concept .
+    
+    MINUS {
+        ?other_concept rdf:type skos:Concept .
+        ?level_0_concept skos:broader ?other_concept .
+    }
+} 
+```
+
+### List all level-1 concepts
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?level_1_concept
+WHERE {
+    ?level_1_concept rdf:type skos:Concept .    
+    ?level_1_concept skos:broader ?level_0_concept .
+    MINUS {
+        ?other_concept rdf:type skos:Concept .
+        ?level_0_concept skos:broader ?other_concept .
+    }    
+} 
+```
+
+### List all level-2 concepts
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?level_2_concept
+WHERE { 
+	?level_2_concept rdf:type skos:Concept .
+    ?level_2_concept skos:broader ?level_1_concept . 
+    ?level_1_concept skos:broader ?level_0_concept .
+} 
+```
 
 
 ## Contact Details
