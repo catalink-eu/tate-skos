@@ -1,3 +1,4 @@
+@prefix : <http://caspar.catalink.eu/tate#> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,9 +8,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tate: <http://caspar.catalink.eu/tate#> .
+@base <http://caspar.catalink.eu/tate> .
 
 <http://caspar.catalink.eu/tate> rdf:type owl:Ontology ;
-                                  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                  owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                              <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl> ;
+                                  <http://purl.org/dc/elements/1.1/publisher> <https://catalink.eu/> ;
+                                  <http://purl.org/dc/terms/created> "2021-11-01T00:00:00"^^xsd:dateTime ;
+                                  <http://purl.org/dc/terms/creator> "Efstratios Kontopoulos" ,
+                                                                     "Panagiotis Mitzias" ;
+                                  <http://purl.org/dc/terms/description> "This ontology features Tate's 3-level subject hierarchy as a SKOS taxonomy. It was generated through the CASPAR semantic data integration framework."@en ;
+                                  <http://purl.org/dc/terms/license> <https://www.apache.org/licenses/LICENSE-2.0> ;
+                                  <http://purl.org/dc/terms/title> "Tate SKOS subject hierarchy"@en ;
+                                  rdfs:seeAlso <https://caspar.catalink.eu/> ;
                                   owl:versionInfo "1.0.0" .
 
 #################################################################
