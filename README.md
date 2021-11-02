@@ -1,4 +1,4 @@
-# tate-skos
+# Tate SKOS Subject Hierarchy
 This repository features a [SKOS](https://www.w3.org/2004/02/skos/) taxonomy generated from Tate's subject hierarchy through the use of Catalink's proprietary semantic data integration framework [CASPAR](https://caspar.catalink.eu/). 
 
 
@@ -11,22 +11,24 @@ This repository features a [SKOS](https://www.w3.org/2004/02/skos/) taxonomy gen
 | level-1 |  142  |
 | level-2 |  2251 |
 
-Having the subject hierarchy in SKOS format enables its easy publication and use by third parties as [linked data](https://en.wikipedia.org/wiki/Linked_data). Therefore, in order to establish semantic interoperability with third parties and help out with Tate's extroversion, our aim in this work was to convert the JSON files to a SKOS taxonomy using our in-house [CASPAR framework](https://caspar.catalink.eu/) for semantic data integration.
+Having the subject hierarchy in SKOS format enables its easy publication and use by third parties as [linked data](https://en.wikipedia.org/wiki/Linked_data). Thus, in order to establish semantic interoperability with third parties, our aim in this work was to convert the JSON files to a SKOS taxonomy using our in-house [CASPAR framework](https://caspar.catalink.eu/) for semantic data integration.
 
 
 ## Semantic Data Integration with CASPAR
-CASPAR converts the input files into a semantic [Knowledge Graph](https://en.wikipedia.org/wiki/Knowledge_graph) (KG) - in this case, an RDF SKOS taxonomy - through the definition of mappings between input data fields and respective ontology concepts. The specification of mappings is compliant with a proprietary Domain-Specific Language (DSL) based on JSON syntax.
+CASPAR converts the input files into a semantic [Knowledge Graph](https://en.wikipedia.org/wiki/Knowledge_graph) (KG) - in this case an RDF SKOS taxonomy - through the definition of mappings between input data fields and respective ontology concepts. The specification of mappings is compliant with a proprietary Domain-Specific Language (DSL) based on JSON syntax.
 
 Just for reference, the mappings for converting Tate's JSON files into a SKOS taxonomy via CASPAR are found [here](resources/mappings).
 
 
 ## SKOS Taxonomy
-The resulting SKOS taxonomy can be found [here](resources/ontology) and is compliant with the '[Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web](https://arxiv.org/abs/2003.13084)'. Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) in PDF, containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
+The resulting SKOS taxonomy can be found [here](resources/ontology) and is compliant with the '[Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web](https://arxiv.org/abs/2003.13084)'. Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) (PDF file), containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
 
 ![tate-skos-play.png](resources/figures/tate-skos-play.png)
 
 
 ## Sample SPARQL Queries
+
+Below is a list of indicative SPARQL queries for retrieving information from the KG.
 
 ### List all level-0 concepts
 ```sparql
