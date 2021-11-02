@@ -21,7 +21,7 @@ Just for reference, the mappings for converting Tate's JSON files into a SKOS ta
 
 
 ## SKOS Taxonomy
-The resulting SKOS taxonomy can be found [here](resources/ontology) and is compliant with the '[Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web](https://arxiv.org/abs/2003.13084)'. Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) (PDF file), containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
+The resulting SKOS taxonomy can be found [here](tate-skos.ttl) and is compliant with the '[Best Practices for Implementing FAIR Vocabularies and Ontologies on the Web](https://arxiv.org/abs/2003.13084)'. Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject tree (see figure below), as well as the [complete documentation](resources/documentation/tate-skos-documentation.pdf) (PDF file), containing the alphabetical index of the subjects with attributes on each entry (notation, broader, narrower, related, all notes), followed by a clickable hierarchical tree that directs to entries in the alphabetical index.
 
 ![tate-skos-play.png](resources/figures/tate-skos-play.png)
 
