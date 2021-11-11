@@ -1,4 +1,4 @@
-# Tate SKOS Subject Hierarchy
+# Tate's Subject Hierarchy as a SKOS Taxonomy
 This repository features a [SKOS](https://www.w3.org/2004/02/skos/) taxonomy generated from Tate's subject hierarchy through the use of Catalink's proprietary semantic data integration framework [CASPAR](https://caspar.catalink.eu/). 
 
 
@@ -32,7 +32,7 @@ Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject 
 
 Below is a list of indicative SPARQL queries for retrieving information from the KG.
 
-### List all level-0 concepts
+### List All level-0 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -48,7 +48,7 @@ WHERE {
 } 
 ```
 
-### List all level-1 concepts
+### List All level-1 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -64,7 +64,7 @@ WHERE {
 } 
 ```
 
-### List all level-2 concepts
+### List All level-2 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
