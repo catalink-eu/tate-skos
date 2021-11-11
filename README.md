@@ -32,15 +32,14 @@ Through [SKOS Play](https://skos-play.sparna.fr/play/) we generated the subject 
 
 Below is a list of indicative SPARQL queries for retrieving information from the KG.
 
-### List All level-0 Concepts
+### List All Level-0 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?level_0_concept
-WHERE { 
-	?level_0_concept rdf:type skos:Concept .
-    
+WHERE {
+    ?level_0_concept rdf:type skos:Concept .
     MINUS {
         ?other_concept rdf:type skos:Concept .
         ?level_0_concept skos:broader ?other_concept .
@@ -48,7 +47,7 @@ WHERE {
 } 
 ```
 
-### List All level-1 Concepts
+### List All Level-1 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -64,7 +63,7 @@ WHERE {
 } 
 ```
 
-### List All level-2 Concepts
+### List All Level-2 Concepts
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
